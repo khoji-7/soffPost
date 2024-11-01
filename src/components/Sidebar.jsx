@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../public/1.svg"
 
 const Sidebar = () => {
     return (

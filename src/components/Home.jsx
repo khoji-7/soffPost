@@ -28,12 +28,10 @@ const Home = () => {
         return matchesStatus && matchesSearch; // Status va qidiruvga mos kelishi
     });
 
-    // Pagination uchun indekslar
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-    // Sahifa sonini hisoblash
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
     const handleNextPage = () => {
@@ -61,7 +59,7 @@ const Home = () => {
                         type="text"
                         className="bg-[#f5f6fa] w-80"
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)} // Qidiruv so'zini yangilash
+                        onChange={(e) => setSearchTerm(e.target.value)} 
                     />
                     <CiSearch />
                 </div>
@@ -84,7 +82,7 @@ const Home = () => {
                     }`}
                 >
                     All Status
-                    <span className="h-5 flex items-center justify-center rounded-xl w-6 bg-[#B2C2DF]">
+                    <span className="h-5 flex items-center justify-center text-white rounded-xl w-6 bg-[#B2C2DF]">
                         {posts.length}
                     </span>
                 </button>
@@ -97,7 +95,7 @@ const Home = () => {
                     }`}
                 >
                     Draft
-                    <span className="h-5 flex items-center justify-center rounded-xl w-6 bg-[#B2C2DF]">
+                    <span className="h-5 flex items-center justify-center text-white rounded-xl w-6 bg-[#B2C2DF]">
                         {posts.filter((post) => post.status === "Draft").length}
                     </span>
                 </button>
@@ -110,7 +108,7 @@ const Home = () => {
                     }`}
                 >
                     Published
-                    <span className="h-5 flex items-center justify-center rounded-xl w-6 bg-[#B2C2DF]">
+                    <span className="h-5 flex items-center text-white justify-center rounded-xl w-6 bg-[#B2C2DF]">
                         {posts.filter((post) => post.status === "Published").length}
                     </span>
                 </button>
@@ -126,7 +124,7 @@ const Home = () => {
                     value={postsPerPage}
                     onChange={(e) => {
                         setPostsPerPage(Number(e.target.value));
-                        setCurrentPage(1); // yangi son o'rnatilganda birinchi sahifaga o'tish
+                        setCurrentPage(1); 
                     }}
                     className="border border-gray-300 rounded px-2 py-1"
                 >
